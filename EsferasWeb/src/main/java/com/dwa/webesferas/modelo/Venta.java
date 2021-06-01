@@ -16,7 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-@Entity(name="Venta")
+@Entity(name="venta")
 public class Venta implements Serializable {
 
     /**

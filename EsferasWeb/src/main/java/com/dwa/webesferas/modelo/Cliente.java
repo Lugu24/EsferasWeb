@@ -14,7 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity(name="Cliente")
+@Entity(name="cliente")
 public class Cliente implements Serializable {
 
     /**
