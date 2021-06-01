@@ -46,7 +46,7 @@ public class ClienteController {
 			return "redirect:/pagina/Index";
 		}
 		modelo.addAttribute("error", servicioCliente.getMensaje());
-		return "/cliente/Registro";
+		return "cliente/Registro";
 	}
 	@GetMapping("/cliente/salir")
 	public String salir(HttpSession sesion) {

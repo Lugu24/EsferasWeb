@@ -26,6 +26,6 @@ public String listar(Model modelo) {
 	if(!servicioVenta.getMensaje().equals("")) {
 		modelo.addAttribute("error",servicioVenta.getMensaje());
 	}
-	return "/pagina/Ventas";
+	return "pagina/Ventas";
 }
 }

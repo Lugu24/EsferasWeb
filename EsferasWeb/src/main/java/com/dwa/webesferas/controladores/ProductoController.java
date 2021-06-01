@@ -47,7 +47,7 @@ public String listar(Model modelo) {
 	if(!servicioProducto.getMensaje().equals("")) {
 		modelo.addAttribute("error",servicioProducto.getMensaje());
 	}
-	return "/producto/producto";
+	return "producto/producto";
 }
 
 @GetMapping("/producto/comprar/{id}")
@@ -73,13 +73,13 @@ public String comprar( Model modelo, @PathVariable int id,@ModelAttribute  Venta
 		modelo.addAttribute("error", servicioVenta.getMensaje());	
 	}
 	
-	return "/producto/mensaje";
+	return "producto/mensaje";
 }
 
 @GetMapping("/producto/registrar")
 public String registrar(Model model) {
 	model.addAttribute("producto", new Producto());
-	return "/producto/Registro";
+	return "producto/Registro";
 }
 @PostMapping("/producto/registrar")
 public String registrar(Model modelo, @ModelAttribute Producto producto) {
@@ -90,7 +90,7 @@ public String registrar(Model modelo, @ModelAttribute Producto producto) {
 	}
 	modelo.addAttribute("error", servicioProducto.getMensaje());
 	
-	return "/producto/Registro";	
+	return "producto/Registro";	
 }
 
 }
