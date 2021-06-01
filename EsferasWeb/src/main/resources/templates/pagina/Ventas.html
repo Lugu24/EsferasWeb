@@ -1,0 +1,100 @@
+<html>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=initMap" async defer></script>
+
+<meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/indexC.css">
+  
+  <style> 
+    #map {
+      height: 100%;
+    }
+   
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style> 
+<header>
+    <img class="logo" th:src="@{/Proyecto/Logo Chig.png}"/> 
+        <h1 class="titulo">Esferas Chignahuapan</h1>
+        <nav class="navbar navbar-expand-sm bg-danger navbar-dark"> 
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <a class="nav-link" href="/pagina/Index">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Productos.html">Productos</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/pagina/Ventas">Venta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="RegistrarPro.html">Registar Producto</a>
+            </li>
+          </ul>
+        </nav>
+</header>
+
+<body>
+
+	<div class="row">
+		<div class="col-2"></div>
+		<div class="col-8">
+
+			    <table class="table table-striped" >
+				<thead>
+					<tr>
+						<th>IdVenta</th>
+						<th>Cliente</th>
+						<th>Fecha</th>
+						<th>Producto</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr th:each="venta:${ventas}">
+							<td th:text="${venta.idventa}"></td>
+							<td th:text="${venta.cliente.nombre}"></td>
+							<td th:text="${venta.fecha}"></td>
+							<td th:text="${venta.producto.nomnbre}"></td>
+							<td th:text="${venta.total}"></td>
+                        </tr>
+                </tbody>
+			</table>
+
+		</div>
+		<div class="col-2"></div>
+	</div>
+</body>
+<footer>
+  <label>Contactanos en nuestros sitios de</label>
+  <br>
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle-thin fa-stack-2x"></i>
+    <i class="fa fa-facebook fa-stack-1x"></i>
+  </span>
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle-thin fa-stack-2x"></i>
+    <i class="fa fa-whatsapp fa-stack-1x"></i>
+  </span>
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle-thin fa-stack-2x"></i>
+      <i class="fa fa-twitter fa-stack-1x"></i>
+    </span>
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle-thin fa-stack-2x"></i>
+      <i class="fa fa-instagram fa-stack-1x"></i>
+    </span>
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle-thin fa-stack-2x"></i>
+      <i class="fa fa-google fa-stack-1x"></i>
+    </span>
+</footer>
+</html>

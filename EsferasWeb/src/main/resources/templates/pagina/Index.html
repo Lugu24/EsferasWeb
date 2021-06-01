@@ -1,0 +1,111 @@
+<html>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=initMap" async defer></script>
+
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/indexC.css">
+  <style> 
+    #map {
+      height: 100%;
+    }
+   
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style> 
+<header>
+    <img class="logo" th:src="@{/Proyecto/Logo Chig.png}"/> 
+        <h1 class="titulo">Esferas Chignahuapan</h1>
+        <nav class="navbar navbar-expand-sm bg-danger navbar-dark"> 
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/pagina/Index">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/producto/listar">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pagina/Ventas">Venta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/producto/registrar">Registar Producto</a>
+            </li>
+          </ul>
+        </nav>
+</header>
+
+<body>
+</br>
+
+<fieldset class="container">
+</br>
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+    <h2 class="card-title">¿Quines somos?</h1>
+    <p class="card-text">Un microempresa fabricante  productora de esferas que se compromete con la felicidad de su famailia </p>
+  </div>
+  	 <img  class="card-img-top" th:src="@{/Proyecto/jetnews-Chignahuapan-artesanias.jpg}"/>
+  </div>
+</br>
+    <div class="card">
+      
+      <div class="card-body">
+    <h2 class="card-title"> Mision</h1>
+    <p class="card-text">Elaborar esferas aretesanales de calidad comprometidos con la region. </p>
+  </div>
+    <img  class="card-img-top" th:src="@{/Proyecto/22DIC2012Esferas08.jpg}"/>
+  </div>
+</div>
+</br>
+<h3>Estamos establecidos en:</h3>
+<div id ="map"></div> 
+<script>
+  var map;
+ function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: 19.840978503186356, lng:-98.02945137494397},
+      zoom: 13,
+    });
+    var marker = new google.maps.Marker({
+      position: {lat: 19.840978503186356, lng: -98.02945137494397},
+      map: map,
+title: 'Esferas Chignahuapan'
+    });
+  }
+</script>
+</fieldset>
+<br/>
+</body>
+
+<footer>
+  <label>Contactanos en nuestros sitios de</label>
+  <br>
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle-thin fa-stack-2x"></i>
+    <i class="fa fa-facebook fa-stack-1x"></i>
+  </span>
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle-thin fa-stack-2x"></i>
+    <i class="fa fa-whatsapp fa-stack-1x"></i>
+  </span>
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle-thin fa-stack-2x"></i>
+      <i class="fa fa-twitter fa-stack-1x"></i>
+    </span>
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle-thin fa-stack-2x"></i>
+      <i class="fa fa-instagram fa-stack-1x"></i>
+    </span>
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle-thin fa-stack-2x"></i>
+      <i class="fa fa-google fa-stack-1x"></i>
+    </span>
+</footer>
+</html>

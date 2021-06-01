@@ -1,0 +1,65 @@
+<html>
+    <link rel = "stylesheet" href= "/css/bootstrap.min.css">
+    <script src = "/js/jquery-3.6.0.js"></script>
+    <script src = "/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            padding-top: 10%;
+            padding-left: 15%;
+            padding-right: 15%;
+            text-align: center;
+            background-color:rgba(240, 111, 111, 0.596);
+            font-family: 'Segoe UI';
+            color: crimson;
+            font-size: 150%;
+        }
+        fieldset{
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.562);
+           
+        }
+        fieldset img{
+            width:20% ;
+        }
+        div.int{
+            text-align: left;
+        }
+        fieldset.arr{
+            color: white;
+            background-color: brown;
+        }   
+    </style>
+    <body>
+    <fieldset class="arr">
+    <h1>Esferas Chignahuapan </h1>
+    <br/>
+    <h2>Bienvenido</h2>
+    </fieldset>
+    <fieldset id="form_login"class="container" >      
+           <img th:src="@{/Proyecto/Esfera roja.png}"/>
+            <div class="int">          
+                        <div th:if="${param.error != null and session['SPRING_SECURITY_LAST_EXCEPTION'] != null}"
+							class = "alert alert-warning alert-dismissible fade show"
+							role = "alert">
+							<button type = "button" class = "close" data-dismiss= "alert">&times;</button>
+							<h4 th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></h4>
+						</div>						
+						 <form action="#" th:action="@{/cliente/Login}" method= "post">
+							<label>Correo electrónico</label>
+							 <input type="email" name="username"class = "form-control" required = "required"/>
+							<label>Contraseña</label>
+							 <input type="password" name="password" class = "form-control" required = "required"/>
+							<p>
+								<input type = "submit" value = "Validar"/>
+								<input type = "reset" value = "Limpiar"/>
+							</p>
+						</form>
+                </div>
+       <a th:href= "@{/cliente/Registro}">No tengo una cuenta, registrarme...</a>
+    </fieldset>
+    <br>
+    <br>
+    
+</body> 
+</html>
